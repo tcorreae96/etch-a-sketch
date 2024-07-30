@@ -1,12 +1,39 @@
 const container = document.querySelector("#container");
 
-function createDivs () {
+// Create a single div with the appropiate size.
+function createDiv () {
 	const newDiv = document.createElement("div");
-	const squareSize = "60px"
+	const squareSize = "40px"
 	newDiv.style.height = squareSize;
 	newDiv.style.width = squareSize;
 	newDiv.style.margin = 0;
 	newDiv.style.padding = 0;
+	newDiv.style.backgroundColor = "#DEF5BD";
+	newDiv.classList.add("hoverable");
 	return newDiv;
 }
 
+// Create a column with 16 squares inside
+function createColumns () {
+	const newColumn = document.createElement("div");
+	for (let i = 0; i < 16; i++) {
+		newColumn.appendChild(createDiv());
+	}
+	return newColumn;
+}
+
+// Create 16 rows.
+function createRows () {
+	const newRow = document.createElement("div");
+	newRow.style.display = "flex";
+	for (let i = 0; i < 16; i++) {
+		newRow.appendChild(createColumns());
+	}
+	return newRow;
+}
+
+function createGrid () {
+	container.appendChild(createRows());
+}
+
+createGrid();
