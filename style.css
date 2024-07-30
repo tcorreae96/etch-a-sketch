@@ -6,8 +6,8 @@
 #container {
 	display: flex;
 	flex-direction: column;
+	flex: 0 0 640px;
 	padding: 1rem;
 	align-items: center;
-	flex-basis: 640px;
 	gap: 16px;
 }

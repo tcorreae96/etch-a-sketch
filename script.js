@@ -22,9 +22,9 @@ function clearGrid () {
 }
 
 // Create a single div with the appropiate size.
-function createDiv () {
+function createDiv (squares) {
 	const newDiv = document.createElement("div");
-	const squareSize = "40px";
+	const squareSize = (640 / squares).toString() + "px";
 	newDiv.style.height = squareSize;
 	newDiv.style.width = squareSize;
 	newDiv.style.margin = 0;
@@ -35,15 +35,11 @@ function createDiv () {
 	return newDiv;
 }
 
-// function calculateSquareSize (squares) {
-// 	return (640 / squares);
-// }
-
 // Create a column with 16 squares inside
 function createColumns (squares) {
 	const newColumn = document.createElement("div");
 	for (let i = 0; i < squares; i++) {
-		newColumn.appendChild(createDiv());
+		newColumn.appendChild(createDiv(squares));
 	}
 	return newColumn;
 }
