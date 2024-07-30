@@ -10,7 +10,6 @@ function createDiv () {
 	newDiv.style.padding = 0;
 	newDiv.style.backgroundColor = "#DEF5BD";
 	newDiv.classList.add("gridSquare");
-	newDiv.style.border = "1px solid black"
 	return newDiv;
 }
 
