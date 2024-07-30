@@ -9,7 +9,8 @@ function createDiv () {
 	newDiv.style.margin = 0;
 	newDiv.style.padding = 0;
 	newDiv.style.backgroundColor = "#DEF5BD";
-	newDiv.classList.add("hoverable");
+	newDiv.classList.add("gridSquare");
+	newDiv.style.border = "1px solid black"
 	return newDiv;
 }
 
@@ -37,3 +38,13 @@ function createGrid () {
 }
 
 createGrid();
+
+const gridSquares = document.querySelectorAll(".gridSquare");
+
+gridSquares.forEach((gridSquare) => {
+	gridSquare.addEventListener("mouseover", handleMouseOver)
+})
+
+function handleMouseOver (event) {
+	event.target.style.backgroundColor = "#4E7A10";
+}
