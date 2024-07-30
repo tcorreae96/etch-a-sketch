@@ -2,3 +2,12 @@
 	margin: 0;
 	padding: 0;
 }
+
+#container {
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+	align-items: center;
+	flex-basis: 640px;
+	gap: 16px;
+}
